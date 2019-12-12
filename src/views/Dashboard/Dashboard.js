@@ -45,7 +45,90 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <div>
-      
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="warning" stats icon>
+
+            </CardHeader>
+            <CardFooter stats>
+             
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="success" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+             
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="danger" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+              
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="info" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+              
+            </CardFooter>
+          </Card>
+        </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="warning" stats icon>
+
+            </CardHeader>
+            <CardFooter stats>
+             
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="success" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+             
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="danger" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+              
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="info" stats icon>
+              
+            </CardHeader>
+            <CardFooter stats>
+              
+            </CardFooter>
+          </Card>
+        </GridItem>
+      </GridContainer>
       
     </div>
   );
