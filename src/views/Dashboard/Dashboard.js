@@ -1,4 +1,6 @@
 import React from "react";
+import StarRatingComponent from 'react-star-rating-component';
+import 'react-star-rating/dist/css/react-star-rating.min.css'
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -31,6 +33,10 @@ import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 
+import ScrollMenu from 'react-horizontal-scrolling-menu';
+// import mobiscroll from '@mobiscroll/react';
+// import '@mobiscroll/react/dist/css/mobiscroll.min.css';
+
 import avatar from "assets/img/faces/marc.jpg";
 
 import { bugs, website, server } from "variables/general.js";
@@ -47,13 +53,17 @@ const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
   const classes = useStyles();
+  const { rating } = 4;
+  
   return (
-    <div>
+    <div >
+      
 
 <div className="box-header with-border">
       <h3 className="box-title">Fiction</h3>
       <hr></hr>
   </div>
+  <div>
       <GridContainer>
       <GridItem xs={12} sm={12} md={3}>
           <Card>
@@ -61,19 +71,58 @@ export default function Dashboard() {
               <CardIcon color="success">
                 <Store />
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
+              <p className={classes.cardCategory}>Haruki Murakami</p>
+            
             </CardHeader>
             <CardBody profile>
-              
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+        
+              <h4 className={classes.cardTitle}>Kafka on the shore</h4>
+              <StarRatingComponent 
+          name="rate2" 
+          editing={false}
+          starDimension="20px"
+          starCount={5}
+          value={4}
+        />
               <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
+                Don{"'"}t be scared of the truth And I love you like Kanye loves Kanye
                 I love Rick Owens’ bed design but the back is...
               </p>
               <Button color="primary" round>
-                Follow
+                Details
+              </Button>
+            </CardBody>
+            
+          </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={12} md={3}>
+          <Card>
+            <CardHeader color="success" stats icon>
+              <CardIcon color="success">
+                <Store />
+              </CardIcon>
+              <p className={classes.cardCategory}>Haruki Murakami</p>
+            
+            </CardHeader>
+            <CardBody profile>
+            {/* <h2> {rating}</h2> */}
+        
+              <h4 className={classes.cardTitle}>Kafka on the shore</h4>
+              <StarRatingComponent 
+          name="rate2" 
+          editing={false}
+          starDimension="20px"
+          // renderStarIcon={() => <span></span>}
+          starCount={5}
+          value={4}
+        />
+              <p className={classes.description}>
+                Don{"'"}t be scared of the truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </p>
+              <Button color="primary" round>
+                Details
               </Button>
             </CardBody>
             
@@ -122,6 +171,8 @@ export default function Dashboard() {
           </Card>
         </GridItem>
       </GridContainer>
+</div>        
+
       <div className="box-header with-border">
       <h3 className="box-title">Biography</h3>
       <hr></hr>
