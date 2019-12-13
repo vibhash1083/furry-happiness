@@ -86,6 +86,7 @@ export default function Admin({ ...rest }) {
     window.addEventListener("resize", resizeFunction);
     // Specify how to clean up after this effect:
     return function cleanup() {
+     
       if (navigator.platform.indexOf("Win") > -1) {
         ps.destroy();
       }
