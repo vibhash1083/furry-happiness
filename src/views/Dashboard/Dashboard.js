@@ -1,6 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
-
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -30,26 +28,119 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
-import { bugs, website, server } from "variables/general.js";
 import Button from "components/CustomButtons/Button.js";
 import CardAvatar from "components/Card/CardAvatar.js";
+
+import avatar from "assets/img/faces/marc.jpg";
+
+import { bugs, website, server } from "variables/general.js";
+
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
 } from "variables/charts.js";
-import avatar from "assets/img/faces/marc.jpg";
-import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
+import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
   const classes = useStyles();
+
   return (
     <div>
+    <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src={avatar} alt="Avatar" styles="width:300px;height:300px;"/>
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect & Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
+      
       <GridContainer>
+      <div class="flip-card">
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
+     <GridItem xs={12} sm={12} md={3}>
+          <Card >
+            <CardHeader color="light" stats icon>
+              <CardIcon color="primary">
+              <img src={avatar} alt="..."  height="105" width="100" />
+              </CardIcon>
+              <p className={classes.cardCategory}>Music</p>
+            </CardHeader>
+            <CardBody profile>
+            <h4 className={classes.cardCategory}>BTS</h4>
+              <h6 className={classes.cardTitle}>Beyond the Scene</h6>
+              <Button color="primary" round>
+                Details
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+        </div>
+        <div class="flip-card-back">
+          <h1>John Doe</h1> 
+          <p>Architect & Engineer</p> 
+          <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
+        
+        <GridItem xs={12} sm={12} md={4}>
+        <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={e => e.preventDefault()}>
+                <img src={avatar} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <p className={classes.description}>
+                Don{"'"}t be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+        <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={e => e.preventDefault()}>
+                <img src={avatar} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <p className={classes.description}>
+                Don{"'"}t be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
+          </Card>
+        </GridItem>
+      </GridContainer>
+      <div className="box-header with-border">
+      <h3 className="box-title">Biography</h3>
+      <hr></hr>
+  </div>
+  <GridContainer>
       <GridItem xs={12} sm={12} md={4}>
           <Card profile>
             <CardAvatar profile>
@@ -71,86 +162,46 @@ export default function Dashboard() {
             </CardBody>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="warning" stats icon>
-
-            </CardHeader>
-            <CardFooter stats>
-             
-            </CardFooter>
+        <GridItem xs={12} sm={12} md={4}>
+        <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={e => e.preventDefault()}>
+                <img src={avatar} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <p className={classes.description}>
+                Don{"'"}t be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="success" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-             
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="danger" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-              
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="info" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-              
-            </CardFooter>
-          </Card>
-        </GridItem>
-      </GridContainer>
-      <GridContainer>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="warning" stats icon>
-
-            </CardHeader>
-            <CardFooter stats>
-             
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="success" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-             
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="danger" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-              
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="info" stats icon>
-              
-            </CardHeader>
-            <CardFooter stats>
-              
-            </CardFooter>
+        <GridItem xs={12} sm={12} md={4}>
+        <Card profile>
+            <CardAvatar profile>
+              <a href="#pablo" onClick={e => e.preventDefault()}>
+                <img src={avatar} alt="..." />
+              </a>
+            </CardAvatar>
+            <CardBody profile>
+              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h4 className={classes.cardTitle}>Alec Thompson</h4>
+              <p className={classes.description}>
+                Don{"'"}t be scared of the truth because we need to restart the
+                human foundation in truth And I love you like Kanye loves Kanye
+                I love Rick Owens’ bed design but the back is...
+              </p>
+              <Button color="primary" round>
+                Follow
+              </Button>
+            </CardBody>
           </Card>
         </GridItem>
       </GridContainer>

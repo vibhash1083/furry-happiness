@@ -11,9 +11,9 @@ import {
 const cardIconStyle = {
   cardIcon: {
     "&$warningCardHeader,&$successCardHeader,&$dangerCardHeader,&$infoCardHeader,&$primaryCardHeader,&$roseCardHeader": {
-      borderRadius: "3px",
-      backgroundColor: grayColor[0],
-      padding: "15px",
+      borderRadius: "1px",
+      
+      padding: "1px",
       marginTop: "-20px",
       marginRight: "15px",
       float: "left"

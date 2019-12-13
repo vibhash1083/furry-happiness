@@ -6,6 +6,9 @@ import {
 } from "assets/jss/material-dashboard-react.js";
 
 const dashboardStyle = {
+  
+
+
   successText: {
     color: successColor[0]
   },
@@ -76,6 +79,12 @@ const dashboardStyle = {
       fontWeight: "400",
       lineHeight: "1"
     }
+  },
+  flip:{
+    backgroundcolor: "transparent",
+  width: 300,
+  height: 300,
+  perspective: 1000,
   }
 };
 
