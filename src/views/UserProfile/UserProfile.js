@@ -41,117 +41,140 @@ export default function UserProfile() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+        <GridItem xs={8}>
+          <GridContainer>
+            <GridItem xs={12}>
+            <Card activerequests>
+              <CardHeader color="primary">
+                <h4 className={classes.cardTitleWhite}>Active Requests</h4>
+              </CardHeader>
+              <CardBody activerequests>
+                <GridContainer>
+                  <GridItem xs={12} sm={12} md={8}>
+                    <p>Arjun</p>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button color="primary" round>Approve</Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={8}>
+                    <p>Anirudh</p>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button color="primary" round>Approve</Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={8}>
+                    <p>Akash</p>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button color="primary" round>Approve</Button>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={8}>
+                    <p>Ajay</p>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+                    <Button color="primary" round>Approve</Button>
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+            </Card>
+          </GridItem>
+            <GridItem xs={12}>
+              <Card booksread>
+                <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Books Read</h4>
             </CardHeader>
-            <CardBody>
+                <CardBody booksread>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
-                  <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      disabled: true
-                    }}
-                  />
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
                 </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Username"
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Email address"
-                    id="email-address"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
                 </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </GridContainer>
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
-                  <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5
-                    }}
-                  />
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
                 </GridItem>
               </GridContainer>
             </CardBody>
-            <CardFooter>
-              <Button color="primary">Update Profile</Button>
-            </CardFooter>
-          </Card>
+              </Card>
+            </GridItem>
+            <GridItem xs={12}>
+              <Card booksowned>
+                <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Books Owned</h4>
+            </CardHeader>
+                <CardBody booksowned>
+              <GridContainer>
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
+                </GridItem>
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
+                </GridItem>
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
+                </GridItem>
+                <GridItem xs={6}>
+                  <Card>
+                    <CardHeader>
+                      </CardHeader>
+                        <CardBody>Hey</CardBody>
+                      <CardFooter>
+                    </CardFooter>
+                  </Card>
+                </GridItem>
+              </GridContainer>
+            </CardBody>
+              </Card>
+            </GridItem>
+          </GridContainer>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={4}>
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -167,11 +190,11 @@ export default function UserProfile() {
                 I love Rick Owens’ bed design but the back is...
               </p>
               <Button color="primary" round>
-                Follow
+                Update Profile
               </Button>
             </CardBody>
           </Card>
-        </GridItem>
+          </GridItem>
       </GridContainer>
     </div>
   );
