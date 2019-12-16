@@ -44,7 +44,7 @@ export default function ActiveRequests(){
                 <GridContainer>
                   <Approval name={"David"} />
                   <Approval name={"Warner"} />
-                  <Approval name={"Joe Root"} />
+                  <Approval name={"Root"} />
                   <Approval name={"Maxwell"} />
                   <Approval name={"Finch"} />
                 </GridContainer>
