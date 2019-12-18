@@ -12,7 +12,6 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/" component={BooksListView} />
-      <Redirect from="/" to="/home" />
     </Switch>
   </Router>,
   document.getElementById("root")

@@ -3,7 +3,7 @@ import BooksListView from "views/Dashboard";
 
 const dashboardRoutes = [
   {
-    path: "/home",
+    path: "/",
     name: "Book",
     icon: LibraryBooks,
     component: BooksListView,
