@@ -1,5 +1,10 @@
 import React from "react";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import GridItem from "components/Grid/GridItem.js";
 import Card from "components/Card/Card.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -10,6 +15,7 @@ import CardFooter from "components/Card/CardFooter.js";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "components/CustomButtons/Button.js";
 import avatar from "assets/img/faces/marc.jpg";
+import UpdateProfile from "views/UserProfile/UpdateProfile";
 
 const styles = {
     cardCategoryWhite: {
@@ -30,10 +36,10 @@ const styles = {
     }
   };
 
-  
+
 const useStyles = makeStyles(styles);
 
-export default function BooksOwned(){
+export default function Profile(){
     const classes = useStyles();
       return (
         <React.Fragment>
@@ -51,9 +57,14 @@ export default function BooksOwned(){
                 human foundation in truth And I love you like Kanye loves Kanye
                 I love Rick Owens’ bed design but the back is...
               </p>
-              <Button color="primary" round>
-                Update Profile
+              <Button color="primary" round component={Link} to="/admin/user/update">
+                Edit Profile
               </Button>
+              <Switch>
+                <Route path="/admin/user/update">
+                  <UpdateProfile/>
+                </Route>
+              </Switch>
             </CardBody>
           </Card>
         </React.Fragment>
