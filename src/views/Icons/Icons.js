@@ -24,12 +24,12 @@ export default function Icons() {
             <h4 className={classes.cardTitleWhite}>Material Design Icons</h4>
             <p className={classes.cardCategoryWhite}>
               Handcrafted by our friends from{" "}
-              <a
+              {/* <a
                 href="https://design.google.com/icons/?ref=creativetime"
                 target="_blank"
-              >
+              > */}
                 Google
-              </a>
+              {/* </a> */}
             </p>
           </CardHeader>
           <CardBody>

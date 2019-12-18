@@ -1,6 +1,14 @@
 import React from "react";
 import StarRatingComponent from 'react-star-rating-component';
-import 'react-star-rating/dist/css/react-star-rating.min.css'
+import 'react-star-rating/dist/css/react-star-rating.min.css';
+
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
+
+
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -33,13 +41,17 @@ import CardFooter from "components/Card/CardFooter.js";
 import Button from "components/CustomButtons/Button.js";
 import CardAvatar from "components/Card/CardAvatar.js";
 
+// import tileData from './tileData.js'
+
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 // import mobiscroll from '@mobiscroll/react';
 // import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 
 import avatar from "assets/img/faces/marc.jpg";
-
 import { bugs, website, server } from "variables/general.js";
+
+import TileData from './tileData.js';
+
 
 import {
   dailySalesChart,
@@ -56,7 +68,10 @@ export default function Dashboard() {
   const { rating } = 4;
   
   return (
-    <div >
+    <div>
+      {/* Disp
+      <TileData />
+      Disp1 */}
       
 
 <div className="box-header with-border">
@@ -128,48 +143,7 @@ export default function Dashboard() {
             
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-        <Card profile>
-            <CardAvatar profile>
-              <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={avatar} alt="..." />
-              </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
-              <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
-              </p>
-              <Button color="primary" round>
-                Follow
-              </Button>
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-        <Card profile>
-            <CardAvatar profile>
-              <a href="#pablo" onClick={e => e.preventDefault()}>
-                <img src={avatar} alt="..." />
-              </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
-              <p className={classes.description}>
-                Don{"'"}t be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
-              </p>
-              <Button color="primary" round>
-                Follow
-              </Button>
-            </CardBody>
-          </Card>
-        </GridItem>
+
       </GridContainer>
 </div>        
 
