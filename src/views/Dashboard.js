@@ -26,6 +26,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Box from '@material-ui/core/Box';
+import useFetchBooks from "../Utils.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -129,6 +130,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function BooksListView() {
+  const { books, loading, error } = useFetchBooks();
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
