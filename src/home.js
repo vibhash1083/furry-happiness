@@ -1,11 +1,15 @@
 import React from "react";
+import PrimarySearchAppBar from 'components/BookDetailsComponents/AppBar.js';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
+import { AppBar } from "@material-ui/core";
+import BookDetailsView from "views/BookDetails";
+import UserProfile from "views/UserProfile/UserProfile.js";
+import BooksListView from "views/Dashboard";
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
@@ -19,37 +23,18 @@ export default function BasicExample() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
+      <PrimarySearchAppBar />
         <Switch>
+        <Route path="/book/:id" component={BookDetailsView} />
           <Route exact path="/">
-            <Home />
+            <BooksListView />
           </Route>
-          <Route path="/about">
-            <About />
+          <Route path="/user">
+            <UserProfile />
           </Route>
-          <Route path="/dashboard">
+          {/* <Route path="/dashboard">
             <Dashboard />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     </Router>

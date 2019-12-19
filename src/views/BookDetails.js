@@ -195,7 +195,7 @@ export default function BookDetailsView() {
 
   return (
     <Container>
-      <PrimarySearchAppBar />
+      {/* <PrimarySearchAppBar /> */}
       <Typography variant="h6" component="h2">
         Single Book
       </Typography>

@@ -158,9 +158,11 @@ export default function PrimarySearchAppBar() {
         <p>Profile</p>
       </MenuItem>
     </Menu>
+    </div>
   );
 
   return (
+    <div>
     <AppBar position="static">
     <Toolbar>
       <IconButton
@@ -216,5 +218,6 @@ export default function PrimarySearchAppBar() {
   {renderMobileMenu}
   {renderMenu}
     </div>
+
   );
 }
