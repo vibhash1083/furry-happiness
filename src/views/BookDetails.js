@@ -121,7 +121,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function BooksListView() {
+export default function BookDetailsView() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -249,142 +249,9 @@ export default function BooksListView() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      <Box className={classes.box}>
       <Typography variant="h6" component="h2">
-        All Books
+        Single Book
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item sm>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="The Great Gatsby"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://images-na.ssl-images-amazon.com/images/I/41iers%2BHLSL._SX326_BO1,204,203,200_.jpg"
-              title="The Great Gatsby"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
-
-        <Grid item lg>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="Catch-22"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder-188x300.png"
-              title="The Great Gatsby"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item lg>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="To Kill a Mockingbird"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SX330_BO1,204,203,200_.jpg"
-              title="The To Kill a Mockingbird"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
         <Grid item sm>
           <Card className={classes.card}>
             <CardHeader
@@ -428,9 +295,6 @@ export default function BooksListView() {
             </CardActions>
           </Card>
         </Grid>
-      </Grid>
-      </Box>
-      {/* <Button className={classes.root}>Show All</Button> */}
     </Container>
   );
 }
