@@ -1,4 +1,5 @@
 import React from "react";
+
 import { fade, makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
@@ -14,6 +15,8 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
@@ -25,8 +28,6 @@ import Button from "@material-ui/core/Button";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Box from '@material-ui/core/Box';
 
-// The app bar component
-import PrimarySearchAppBar from "components/BookDetailsComponents/AppBar.js"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -194,8 +195,8 @@ export default function BookDetailsView() {
   );
 
   return (
-    <Container>
-      <PrimarySearchAppBar />
+
+    <Container> 
       <Typography variant="h6" component="h2">
         Single Book
       </Typography>

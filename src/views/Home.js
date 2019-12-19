@@ -6,6 +6,13 @@ import {
   Link
 } from "react-router-dom";
 
+import BooksListView from "views/Dashboard.js";
+import BookDetailsView from "views/BookDetails.js";
+import  PrimarySearchAppBar  from "components/BookDetailsComponents/AppBar.js"
+import { primaryBoxShadow } from "assets/jss/material-dashboard-react";
+import { func } from "prop-types";
+
+
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
@@ -16,22 +23,23 @@ import {
 // work properly.
 
 export default function BasicExample() {
-  return (
+  return(
+   
+      
+      
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
+       
 
-        <hr />
+    <div>
+        
+<Bar />
+            <Link to="/"></Link>
+         
+            <Link to="/about"></Link>
+        
+            <Link to="/dashboard"></Link>
+   
+        
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -40,7 +48,9 @@ export default function BasicExample() {
           you have multiple routes, but you want only one
           of them to render at a time
         */}
+        
         <Switch>
+        <Route path="/book/:id" component={BookDetailsView} />
           <Route exact path="/">
             <Home />
           </Route>
@@ -51,18 +61,31 @@ export default function BasicExample() {
             <Dashboard />
           </Route>
         </Switch>
-      </div>
+        
+ </div>
+ 
     </Router>
+ 
+
   );
 }
 
 // You can think of these components as "pages"
 // in your app.
+function Bar()
+{
+    return(
 
+    <PrimarySearchAppBar></PrimarySearchAppBar>
+            
+    );
+}
 function Home() {
   return (
+
     <div>
-      <h2>Home</h2>
+        
+      <BooksListView />
     </div>
   );
 }

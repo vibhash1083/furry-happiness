@@ -202,7 +202,7 @@ export default function BooksListView() {
 
   return (
     <Container>
-      <AppBar position="static">
+      {/* <AppBar position="static">
         <Toolbar>
           <IconButton
             edge="start"
@@ -255,7 +255,7 @@ export default function BooksListView() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {renderMenu} */}
       <Box className={classes.box}>
       <Typography variant="h6" component="h2">
         All Books
@@ -300,7 +300,7 @@ export default function BooksListView() {
                 aria-expanded={expanded}
                 aria-label="show more"
               >
-                <Link to={`/book/1`}><FullscreenIcon /></Link>
+                <Link to={"/book/1"}><FullscreenIcon /></Link>
               </IconButton>
             </CardActions>
           </Card>
