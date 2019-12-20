@@ -28,6 +28,7 @@ import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Box from '@material-ui/core/Box';
 
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -73,9 +74,9 @@ const useStyles = makeStyles(theme => ({
       display: "block"
     }
   },
-  // desc : {
-  //  fontSize:"140%",
-  // },
+  desc : {
+   fontSize:"140%",
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -240,10 +241,10 @@ export default function BookDetailsView(props) {
                       </GridItem>
                       
                       <GridItem  xs="12" sm="3" md= "2">
-                  <p className={classes.desc}><b>Name : </b></p>
+                  <p className={classes.desc}><b>Author : </b></p>
                       </GridItem>
                       <GridItem xs="12" sm="9" md= "10">
-                        <p className={classes.desc}>{bname}</p>
+                        <p className={classes.desc}>{author}</p>
                       </GridItem>
                       {/* <GridItem   xs="12" sm="9" md= "10" >
                   <p></p>
@@ -260,6 +261,7 @@ export default function BookDetailsView(props) {
             </GridItem>
             </GridContainer>
             <CardActions disableSpacing>
+              <CustomizedPopup bid="1" />
               {/* <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton> */}
