@@ -14,10 +14,10 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 import avatar from "assets/img/faces/marc.jpg";
-import ActiveRequests from "containers/UserPage/ActiveRequests.js";
-import BooksRead from "containers/UserPage/BooksRead.js";
-import BooksOwned from "containers/UserPage/BooksOwned.js";
-import Profile from "containers/UserPage/Profile.js";
+import ActiveRequests from "components/UserPage/ActiveRequests.js";
+import BooksRead from "components/UserPage/BooksRead.js";
+import BooksOwned from "components/UserPage/BooksOwned.js";
+import Profile from "components/UserPage/Profile.js";
 
 const styles = {
   cardCategoryWhite: {
