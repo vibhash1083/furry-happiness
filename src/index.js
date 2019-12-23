@@ -7,8 +7,6 @@ import BasicExample from 'home.js';
 // core components
 import BooksListView from "views/Dashboard.js";
 
-// import HomeView from "views/home.js";
-
 import { primaryBoxShadow } from "assets/jss/material-dashboard-react";
 
 const hist = createBrowserHistory();
