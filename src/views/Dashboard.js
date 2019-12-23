@@ -35,6 +35,7 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
+import PrimarySearchAppBar from "../components/BookDetailsComponents/AppBar";
 
 import useFetchBooks from "../getBookUtils.js";
 import useFetchBook from "../postBookUtils.js";
@@ -243,6 +244,7 @@ export default function BooksListView() {
   );
 
   return (
+    
     <Container>
       {/* <AppBar position="static">
         <Toolbar>
