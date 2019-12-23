@@ -305,7 +305,10 @@ export default function BooksListView() {
         All Books
       </Typography>
       <Grid container spacing={3} md={12}> 
-        {books.map((book) => (
+        {books.map((book) =>
+        
+        (
+          
         <Grid item md={3}>
           <Card className={classes.card}>
             <CardHeader
@@ -319,8 +322,9 @@ export default function BooksListView() {
                   <MoreVertIcon />
                 </IconButton>
               }
+              
               title={book.bookName}
-              subheader={book.createdDate}
+              subheader={book.bookAuthor}
             />
             <CardMedia
               className={classes.media}
@@ -329,7 +333,7 @@ export default function BooksListView() {
             />
             <CardContent>
               <Typography variant="body2" color="textSecondary" component="p">
-                Owner: {book.bookAuthor}
+                Owner: <b>{book.userId.userName}</b>
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
