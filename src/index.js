@@ -7,13 +7,11 @@ import BasicExample from 'home.js';
 // core components
 import BooksListView from "views/Dashboard.js";
 
-
 import { primaryBoxShadow } from "assets/jss/material-dashboard-react";
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  
   <Router history={hist}>
     <Switch>
       <Route path="/" component={BasicExample} />

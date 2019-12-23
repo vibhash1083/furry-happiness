@@ -1,13 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PrimarySearchAppBar from 'components/BookDetailsComponents/AppBar.js';
-
+import PrimarySearchAppBar from 'components/BookDetailsComponents/AppBar.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route, 
+  Link
+} from "react-router-dom";
 import { AppBar } from "@material-ui/core";
 import BookDetailsView from "views/BookDetails";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import BooksListView from "views/Dashboard";
-
-
 
 export default function HomeView() {
   return (
@@ -16,6 +20,8 @@ export default function HomeView() {
         <PrimarySearchAppBar />
         <Switch>
           <Route path="/book/:id" component={BookDetailsView} />
+      <PrimarySearchAppBar />
+        <Switch>
         <Route path="/book/:id" component={BookDetailsView} />
         <Route path="/user" component={UserProfile} />
           <Route exact path="/">

@@ -6,7 +6,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardActions from "@material-ui/core/CardActions";
 import CardBody from "components/Card/CardBody.js";
-import Avatar from "@material-ui/core/Avatar";
+import Avatar from "@material-ui/core/Avatar"; 
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
@@ -28,7 +28,6 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import Box from '@material-ui/core/Box';
 
 
 const useStyles = makeStyles(theme => ({
