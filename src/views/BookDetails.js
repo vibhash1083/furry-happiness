@@ -6,13 +6,16 @@ import Card from "components/Card/Card.js";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardActions from "@material-ui/core/CardActions";
 import CardBody from "components/Card/CardBody.js";
-import Avatar from "@material-ui/core/Avatar";
+import Avatar from "@material-ui/core/Avatar"; 
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
 import CustomizedPopup from "components/BookDetailsComponents/BDpopup.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -25,8 +28,6 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
-import Box from '@material-ui/core/Box';
-
 
 
 const useStyles = makeStyles(theme => ({

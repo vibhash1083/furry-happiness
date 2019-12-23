@@ -17,6 +17,8 @@ import avatar from "assets/img/faces/marc.jpg";
 import CardFooter from "components/Card/CardFooter";
 import TabPanel from "components/Tab/Tab.js";
 import DeleteIcon from "components/Icons/DeleteIcon";
+import useFetchBooks from "../getBookUtils.js";
+
 
 const styles = {
   typo: {
@@ -67,6 +69,8 @@ export default function BooksList() {
   const classes = useStyles();
   const status = "Available";
   const check = "Available";
+  const {books,error,loading}= useFetchBooks();
+  
   var books_objects = [
     {
       id: "1",
@@ -101,26 +105,26 @@ export default function BooksList() {
         <h4 className={classes.cardTitleWhite}>Books List</h4>
       </CardHeader>
       <CardBody>
-        {books_objects.map(book_obj => (
+        {books.map(book_obj => (
           <Card profile>
             <CardBody>
               <GridContainer>
                 <GridItem md={2}>
                   <CardIcon>
-                    <img src={avatar} alt="..." height="140" width="130" />
+                    <img src={book_obj.bookImage} alt="..." height="140" width="130" />
                   </CardIcon>
                 </GridItem>
                 <GridItem md={7} align="left">
-                  <h4>{book_obj.name}</h4>
-                  <p>{book_obj.description}</p>
+                  <h4>{book_obj.bookName}</h4>
+                  <p>{book_obj.bookDescription}</p>
                   <h4>Requested / Borrowed Book on 20 / 10 / 2019</h4>
                 </GridItem>
                 <GridItem md={2}>
-                  {  status=== "Available" ? 
+                  {  book_obj.bookStatus === "Available" ? 
                 <DeleteIcon /> :
         <Button color="primary">Return Now </Button> }
                   
-                  <Button color="success">{book_obj.status} </Button>
+                  <Button color="success">{book_obj.bookStatus} </Button>
                 </GridItem>
               </GridContainer>
             </CardBody>
