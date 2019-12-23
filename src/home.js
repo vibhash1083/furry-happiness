@@ -10,6 +10,7 @@ import { AppBar } from "@material-ui/core";
 import BookDetailsView from "views/BookDetails";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import BooksListView from "views/Dashboard";
+import BooksList from "views/BookList.js";
 // import UserProfile from "views/UserProfile/UserProfile.js";
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -28,9 +29,12 @@ export default function BasicExample() {
         <Switch>
         <Route path="/book/:id" component={BookDetailsView} />
         <Route path="/user" component={UserProfile} />
-          <Route exact path="/">
-            <BooksListView />
-          </Route>
+        <Route exact path="/">
+        <BooksListView />
+        </Route>
+        <Route exact path="/list">
+        <BooksList />
+        </Route>
           
           {/* <Route path="/dashboard">
             <Dashboard />
