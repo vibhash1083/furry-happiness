@@ -1,10 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import PrimarySearchAppBar from 'components/BookDetailsComponents/AppBar.js';
+
+import { AppBar } from "@material-ui/core";
+import BookDetailsView from "views/BookDetails";
+import UserProfile from "views/UserProfile/UserProfile.js";
+import BooksListView from "views/Dashboard";
 
 
-import BooksListView from "views/Dashboard.js";
-import BookDetailsView from "views/BookDetails.js";
-import PrimarySearchAppBar from "components/BookDetailsComponents/AppBar.js";
 
 export default function HomeView() {
   return (
@@ -13,8 +16,10 @@ export default function HomeView() {
         <PrimarySearchAppBar />
         <Switch>
           <Route path="/book/:id" component={BookDetailsView} />
+        <Route path="/book/:id" component={BookDetailsView} />
+        <Route path="/user" component={UserProfile} />
           <Route exact path="/">
-            <Home />
+            <BooksListView />
           </Route>
         </Switch>
       </div>

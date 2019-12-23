@@ -107,9 +107,9 @@ export default function CustomizedPopup(props) {
         <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <Card>
-          <CardAvatar profile>
-                <img src={avatar} alt="..." />
-            </CardAvatar>
+      
+                <img align="center" width="20%" height="20%" src="https://images-na.ssl-images-amazon.com/images/I/41iers%2BHLSL._SX326_BO1,204,203,200_.jpg" alt="..." />
+ 
             <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Request confirmation</h4>
               <p className={classes.cardCategoryWhite}>Enter the following details</p>
