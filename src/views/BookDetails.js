@@ -26,7 +26,9 @@ import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import Box from '@material-ui/core/Box';
-
+import StarRatingComponent from 'react-star-rating-component';
+import 'react-star-rating/dist/css/react-star-rating.min.css';
+import SimpleRating from "components/BookDetailsComponents/rating.js";
 
 
 const useStyles = makeStyles(theme => ({
@@ -45,7 +47,14 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: "100%",
   },
- 
+ a_size_large:{
+  fontsize: "21px",
+
+ },
+ a_size_medium:{
+  fontsize: "17px",
+
+ },
   media: {
     height: 275,
     paddingTop: "56.25%" // 16:9
@@ -75,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   desc : {
-   fontSize:"140%",
+   fontSize:"120%",
   },
   search: {
     position: "relative",
@@ -130,7 +139,8 @@ export default function BookDetailsView(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const bname = "The Great Gatsby", author = "Vibhash Chandra";
-
+  const bdesc = "A true classic of twentieth-century literature, this edition has been updated by Fitzgerald scholar James L.W. West III to include the author’s final revisions and features a note on the composition and text, a personal foreword by Fitzgerald’s granddaughter, Eleanor Lanahan—and a new introduction by two-time National Book Award winner Jesmyn Ward.";
+  const sdesc = "The Great Gatsby, F. Scott Fitzgerald’s third book, stands as the supreme achievement of his career. First published in 1925, this quintessential novel of the Jazz Age has been acclaimed by generations of readers. The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted “gin was the national drink and sex the national obsession,” it is an exquisitely crafted tale of America in the 1920s.";
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -205,51 +215,31 @@ export default function BookDetailsView(props) {
       <Typography variant="h6" component="h2">
         Single Book
       </Typography>
-        <GridContainer>
-          <Card className={classes.card}>
-            <CardHeader 
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  T
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="The Great Gatsby"
-              subheader="September 14, 2016"
-            />
-            <GridContainer spacing="1">
-            <GridItem xs="12" sm="2" md="2" >
-              {/* <CardMedia
-                className={classes.media}
-                image="https://images-na.ssl-images-amazon.com/images/I/41beWU7rn8L._SX322_BO1,204,203,200_.jpg"
-                title="Lolita"
-              /> */}
+        <GridContainer spacing="1" padding="0">
+        
+            <GridItem xs="12" sm="3" md="3" >
               <img width = "100%" src = "https://images-na.ssl-images-amazon.com/images/I/41iers%2BHLSL._SX326_BO1,204,203,200_.jpg" />
             </GridItem>
-            <GridItem xs="12" sm="10" md="10" >
-              {/* <CardContent> */}
-                <GridContainer >
-                      <GridItem  xs="12" sm="3" md= "2">
-                  <p className={classes.desc}><b>Name : </b></p>
-                      </GridItem>
-                      <GridItem xs="12" sm="9" md= "10">
-                        <p className={classes.desc}>{bname}</p>
-                      </GridItem>
+            <GridItem padding="0"  xs="12" sm="7" md="7">
+              
+                      <h1>{bname}</h1>
+                      <p>by <b>{author}</b></p>
+                      <SimpleRating val ="3.7" />
                       
-                      <GridItem  xs="12" sm="3" md= "2">
-                  <p className={classes.desc}><b>Author : </b></p>
-                      </GridItem>
-                      <GridItem xs="12" sm="9" md= "10">
-                        <p className={classes.desc}>{author}</p>
-                      </GridItem>
-                      {/* <GridItem   xs="12" sm="9" md= "10" >
-                  <p></p>
-                      </GridItem> */}
-                      </GridContainer>
+{/* <StarRatingComponent 
+          name="rate2" 
+          editing={false}
+          starDimension="20px"
+          starCount={5}
+          value={3.5}
+        /> */}
+                      <hr />
+                      <br />
+                      <p><b>{bdesc}</b></p>
+                      <br />
+                      <p>{sdesc}</p>
+
+              
 
                 {/* <Typography variant="body2" color="textSecondary" component="p">
                   Owner: Vibhash Chandra
@@ -258,10 +248,17 @@ export default function BookDetailsView(props) {
 
 
               {/* </CardContent> */}
-            </GridItem>
+            </GridItem >
+            <GridItem align="center" xs="12" sm="2" md="2">
+              <CustomizedPopup bid="1" />
+              <p>OWNER:<br /><b>PRANJAL Rising Star</b></p>
+              <p>OWNER:<br /><b>PRANJAL Rising Star</b></p>
+              
+              
+              </GridItem> 
             </GridContainer>
             <CardActions disableSpacing>
-              <CustomizedPopup bid="1" />
+           
               {/* <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton> */}
@@ -273,11 +270,10 @@ export default function BookDetailsView(props) {
                 aria-expanded={expanded}
                 aria-label="show more"
               >
-                <FullscreenIcon />
               </IconButton>
             </CardActions>
-          </Card>
-        </GridContainer>
+
+
     </Container>
   );
 }
