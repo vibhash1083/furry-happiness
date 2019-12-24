@@ -54,9 +54,9 @@ export default function UserProfile() {
       <GridContainer>
         <GridItem xs={8}>
           <GridContainer>
-            <ActiveRequests></ActiveRequests>
-            <BooksRead></BooksRead>
-            <BooksOwned></BooksOwned>
+            <ActiveRequests />
+            <BooksRead />
+            <BooksOwned />
           </GridContainer>
         </GridItem>
         <GridItem xs={4}>

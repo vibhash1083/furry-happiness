@@ -1,4 +1,6 @@
 import React from "react";
+import axios from 'axios';
+
 import { fade, makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import Card from "@material-ui/core/Card";
@@ -14,7 +16,6 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -35,6 +36,8 @@ import {
 } from "react-router-dom";
 import PrimarySearchAppBar from "../components/BookDetailsComponents/AppBar";
 
+import useFetchBooks from "../getBookUtils.js";
+// import useFetchBook from "../postBookUtils.js";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -129,7 +132,44 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const userData = {
+  "bookId": 2,
+      "bookName": "k",
+      "bookAuthor": "k",
+      "bookImage": "k",
+      "bookDescription": "k",
+      "bookStatus": "AVAILABLE",
+      "createdDate": "2019-12-19",
+      "userId": {
+          "userId": 109,
+          "userName": "anushka",
+          "userLocation": "j",
+          "image": "j",
+          "emailId": "j",
+          "password": "j"
+      },
+      "categoryId": {
+          "categoryId": 101,
+          "categoryName": "k",
+          "categoryImage": "j"
+      }
+    }
+
+function postAxios(){
+  console.log("hey axios")
+  axios.post('http://localhost:3000/api/books', userData)
+   .then(res => {
+      const response=res.data;
+      if (response.status == 'success') {
+       console.log(response.status)
+      } else {
+        alert('Something went wrong while creating account')
+      }
+   })
+}
+
 export default function BooksListView() {
+  const { books, loading, error } = useFetchBooks();
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -204,14 +244,16 @@ export default function BooksListView() {
   return (
     
     <Container>
-      
-      
       <Box className={classes.box}>
       <Typography variant="h6" component="h2">
         All Books
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item sm>
+      <Grid container spacing={3} md={12}> 
+        {books.map((book) =>
+        
+        (
+          
+        <Grid item md={3}>
           <Card className={classes.card}>
             <CardHeader
               avatar={
@@ -224,17 +266,18 @@ export default function BooksListView() {
                   <MoreVertIcon />
                 </IconButton>
               }
-              title="The Great Gatsby"
-              subheader="September 14, 2016"
+              
+              title={book.bookName}
+              subheader={book.bookAuthor}
             />
             <CardMedia
               className={classes.media}
-              image="https://images-na.ssl-images-amazon.com/images/I/41iers%2BHLSL._SX326_BO1,204,203,200_.jpg"
-              title="The Great Gatsby"
+              image={book.bookImage}
+              title={book.bookName}
             />
             <CardContent>
               <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
+                Owner: <b>{book.userId.userName}</b>
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -250,144 +293,15 @@ export default function BooksListView() {
                 aria-expanded={expanded}
                 aria-label="show more"
               >
-                <Link to={`/book/1`}><FullscreenIcon /></Link>
+                <Link to={"/book/1"}><FullscreenIcon /></Link>
               </IconButton>
             </CardActions>
           </Card>
         </Grid>
-
-        <Grid item lg>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="Catch-22"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder-188x300.png"
-              title="The Great Gatsby"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item lg>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="To Kill a Mockingbird"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://images-na.ssl-images-amazon.com/images/I/51IXWZzlgSL._SX330_BO1,204,203,200_.jpg"
-              title="The To Kill a Mockingbird"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid item sm>
-          <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="recipe" className={classes.avatar}>
-                  R
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title="Lolita"
-              subheader="September 14, 2016"
-            />
-            <CardMedia
-              className={classes.media}
-              image="https://images-na.ssl-images-amazon.com/images/I/41beWU7rn8L._SX322_BO1,204,203,200_.jpg"
-              title="Lolita"
-            />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Owner: Vibhash Chandra
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-              >
-                <FullscreenIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Grid>
+         ))}
       </Grid>
       </Box>
-      {/* <Button className={classes.root}>Show All</Button> */}
     </Container>
   );
 }
+ 
