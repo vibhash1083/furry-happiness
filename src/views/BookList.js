@@ -70,33 +70,7 @@ export default function BooksList() {
   const status = "Available";
   const check = "Available";
   const {books,error,loading}= useFetchBooks();
-  
-  var books_objects = [
-    {
-      id: "1",
-      name: "The hound",
-      status: "Available",
-      description: "this is sample description of book The hound"
-    },
-    {
-      id: "2",
-      name: "Baristar Parvatisham",
-      status: "Available on 1/1/20",
-      description: "this is sample description of book Baristar Parvatisham"
-    },
-    {
-      id: "3",
-      name: "smd book ",
-      status: "Available on 12/12/20",
-      description: "this is sample description of book smd book "
-    },
-    {
-      id: "4",
-      name: "dfash",
-      status: "Available",
-      description: "this is sample description of book prem simma"
-    }
-  ];
+  const user_id = "1";
 
   return (
     <Card>
@@ -116,15 +90,12 @@ export default function BooksList() {
                 </GridItem>
                 <GridItem md={7} align="left">
                   <h4>{book_obj.bookName}</h4>
-                  <p>{book_obj.bookDescription}</p>
-                  <h4>Requested / Borrowed Book on 20 / 10 / 2019</h4>
+                  <p>{book_obj.bookDescription} </p>
+                  { user_id == 2  ? <h4>Requested Book on 20 / 10 / 2019</h4> : <h4>Borrowed Book on 20 / 10 / 2019 </h4> }
                 </GridItem>
                 <GridItem md={2}>
-                  {  book_obj.bookStatus === "Available" ? 
-                <DeleteIcon /> :
-        <Button color="primary">Return Now </Button> }
-                  
-                  <Button color="success">{book_obj.bookStatus} </Button>
+                  {  book_obj.bookStatus == "AVAILABLE" ? <DeleteIcon /> : <Button color="primary">Return Now </Button> }
+                  <Button color="success">{book_obj.bookStatus}  </Button>
                 </GridItem>
               </GridContainer>
             </CardBody>
