@@ -12,6 +12,7 @@ import BookDetailsView from "views/BookDetails";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import BooksListView from "views/Dashboard";
 import BooksList from "views/BookList.js";
+import LoginTab from "views/LoginTab.js";
 
 export default function HomeView() {
   return (
@@ -21,6 +22,7 @@ export default function HomeView() {
         <Switch>
         <Route path="/book/:id" component={BookDetailsView} />
         <Route path="/user" component={UserProfile} />
+        <Route path="/login" component={LoginTab} />
         <Route exact path="/">
         <BooksListView />
         </Route>

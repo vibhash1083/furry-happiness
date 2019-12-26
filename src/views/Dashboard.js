@@ -35,6 +35,7 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import PrimarySearchAppBar from "../components/BookDetailsComponents/AppBar";
+import { BOOK_URL } from "constants/urls.js";
 
 import useFetchBooks from "../getBookUtils.js";
 // import useFetchBook from "../postBookUtils.js";
@@ -77,6 +78,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   title: {
+    fontSize: "10px",
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
@@ -293,7 +295,7 @@ export default function BooksListView() {
                 aria-expanded={expanded}
                 aria-label="show more"
               >
-                <Link to={"/book/1"}><FullscreenIcon /></Link>
+                <Link to={BOOK_URL + book.bookId}><FullscreenIcon /></Link>
               </IconButton>
             </CardActions>
           </Card>
