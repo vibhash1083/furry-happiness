@@ -250,6 +250,7 @@ export default function BooksListView() {
       <Typography variant="h6" component="h2">
         All Books
       </Typography>
+      
       <Grid container spacing={3} md={12}> 
         {books.map((book) =>
         

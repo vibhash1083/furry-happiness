@@ -22,11 +22,10 @@ export default function HomeView() {
         <Switch>
         <Route path="/book/:id" component={BookDetailsView} />
         <Route path="/user" component={UserProfile} />
-        <Route path="/login" component={LoginTab} />
-        <Route exact path="/">
-        <BooksListView />
-        </Route>
-        <Route exact path="/list">
+        <Route path="/home" component={BooksListView} />
+        {/* <BooksListView />
+        </Route> */}
+        <Route path="/list">
         <BooksList />
         </Route>
         </Switch>
@@ -35,10 +34,10 @@ export default function HomeView() {
   );
 }
 
-function Home() {
-  return (
-    <div>
-      <BooksListView />
-    </div>
-  );
-}
+// function Home() {
+//   return (
+//     <div>
+//       <BooksListView />
+//     </div>
+//   );
+// }
