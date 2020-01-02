@@ -1,10 +1,10 @@
 {
   "name": "material-dashboard-react",
-  "homepage": "https://github.com/creativetimofficial/material-dashboard-react",
+  "homepage": "https://github.com/vibhash1083/furry-happiness",
   "authors": [
     "creative-tim"
   ],
-  "description": "A Badass Material-UI Kit based on Material Design",
+  "description": "Booksapp based on Material Design",
   "main": "public/index.html",
   "keywords": [
     "material",
@@ -15,7 +15,7 @@
     "google",
     "twitter"
   ],
-  "license": "Creative TIM License",
+  "license": "Booksapp",
   "ignore": [
     "**/.*",
     "node_modules",

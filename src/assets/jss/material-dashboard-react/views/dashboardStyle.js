@@ -6,6 +6,13 @@ import {
 } from "assets/jss/material-dashboard-react.js";
 
 const dashboardStyle = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    // backgroundColor: styles.palette.background.paper,
+  },
   successText: {
     color: successColor[0]
   },
